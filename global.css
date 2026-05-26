@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: #0b0e14;
+    color: #ffffff;
+    overflow-x: hidden;
+    padding-bottom: 50px;
+}
+
+/* NAVBAR GLOBAL (Igual em todas as páginas) */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient(to bottom, rgba(11,14,20,0.95) 70%, rgba(11,14,20,0) 100%);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 4%;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    color: #00f0ff;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.menu-navegacao {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.menu-navegacao a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.menu-navegacao a:hover, .menu-navegacao a.ativo {
+    color: #ffffff;
+}
+
+.btn-nav-destaque {
+    background-color: #00f0ff;
+    color: #0b0e14 !important;
+    padding: 6px 15px;
+    border-radius: 4px;
+    font-weight: 600 !important;
+}
+
+.btn-nav-destaque:hover {
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
