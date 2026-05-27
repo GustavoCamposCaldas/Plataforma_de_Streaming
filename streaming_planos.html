@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming - Planos</title>
+    <link rel="stylesheet" href="global.css">
+    
+    <style>
+        .planos-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 60px 20px;
+            flex-wrap: wrap;
+        }
+        .card-plano {
+            background-color: #222;
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 30px;
+            width: 280px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .card-plano:hover {
+            border-color: var(--cor-primaria);
+            transform: translateY(-5px);
+        }
+        .card-plano h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--cor-primaria);
+        }
+        .preco {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .btn-assinar {
+            display: inline-block;
+            background-color: var(--cor-primaria);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <h1 class="logo">DevFlix</h1>
+        <nav>
+            <a href="streaming_index.html">Início</a>
+            <a href="streaming_planos.html">Planos</a>
+            <a href="streaming_login.html" class="btn-login">Entrar</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 style="text-align: center; margin-top: 40px;">Escolha o plano ideal para você</h2>
+        <div class="planos-container">
+            <div class="card-plano">
+                <h3>Plano Padrão</h3>
+                <p class="preco">R$ 21,90</p>
+                <p>2 Telas simultâneas</p>
+                <p>Resolução 1080p</p>
+                <a href="#" class="btn-assinar">Escolher</a>
+            </div>
+            <div class="card-plano">
+                <h3>Plano Premium</h3>
+                <p class="preco">R$ 45,90</p>
+                <p>4 Telas simultâneas</p>
+                <p>Resolução 4K + HDR</p>
+                <a href="#" class="btn-assinar">Escolher</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Projeto Escolar - Plataforma de Streaming &copy; 2026</p>
+    </footer>
+</body>
+</html>

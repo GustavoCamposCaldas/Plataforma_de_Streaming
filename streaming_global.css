@@ -1,0 +1,43 @@
+/* Variáveis de cores para facilitar o ajuste do tema */
+:root {
+    --cor-fundo: #141414; /* Preto cinzento estilo Netflix */
+    --cor-texto: #ffffff;
+    --cor-primaria: #e50914; /* Vermelho principal */
+}
+
+/* Reset básico para limpar as margens do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o rodapé fica sempre abaixo */
+}
+
+/* Links em geral */
+a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    transition: 0.2s;
+}
+
+a:hover {
+    color: var(--cor-primaria);
+}
+
+/* Rodapé comum a todas as páginas */
+footer {
+    margin-top: auto; 
+    text-align: center;
+    padding: 20px;
+    background-color: #000000;
+    font-size: 14px;
+    color: #888888;
+}
