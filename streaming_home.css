@@ -1,99 +1,157 @@
-/* ---- MENU DE NAVEGAÇÃO (Navbar) ---- */
+/* ---- NAV BAR FLUTUANTE ---- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background-color: rgba(0, 0, 0, 0.9);
+    padding: 15px 5%; /* Padding em porcentagem para responsividade */
+    background-color: var(--fundo-vidro);
+    backdrop-filter: var(--efeito-vidro); /* Efeito de vidro desfocado */
+    -webkit-backdrop-filter: var(--efeito-vidro);
+    position: fixed; /* Fixa o menu no topo */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Garante que fica por cima de tudo */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--sombra-suave);
 }
 
 .logo {
-    color: var(--cor-primaria);
-    font-size: 28px;
+    color: var(--cor-destaque);
+    font-size: 30px;
+    font-weight: 800; /* Super negrito */
+    letter-spacing: -1px; /* Letras mais próximas */
 }
 
 .navbar nav {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
 }
 
+/* Link normal da nav */
+.navbar nav a:not(.btn-login) {
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--texto-secundario);
+}
+
+/* Botão de login na nav */
 .btn-login {
-    background-color: var(--cor-primaria);
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-weight: bold;
+    background-color: var(--cor-destaque);
+    padding: 10px 22px;
+    border-radius: 50px; /* Bordas totalmente arredondadas */
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.3);
 }
 
 .btn-login:hover {
     background-color: #b20710;
-    color: white;
+    transform: translateY(-2px); /* Flutua levemente ao passar o mouse */
 }
 
-/* ---- BANNER PRINCIPAL DE DESTAQUE ---- */
+/* ---- BANNER IMERSIVO ---- */
 .banner {
-    height: 60vh;
+    height: 75vh; /* Mais alto */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* Imagem de fundo genérica de cinema com uma camada preta transparente */
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80') center/cover;
-    padding: 20px;
+    /* Gradiente moderno que escurece em direção ao conteúdo */
+    background: linear-gradient(180deg, rgba(10,10,10,0.1) 0%, rgba(10,10,10,1) 100%), url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover;
+    padding: 0 10% 20px;
+    margin-top: 80px; /* Compensa a nav fixa */
 }
 
 .banner-conteudo h2 {
-    font-size: 40px;
-    margin-bottom: 15px;
+    font-size: 50px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+    line-height: 1.1;
 }
 
 .banner-conteudo p {
     font-size: 20px;
-    margin-bottom: 30px;
+    color: var(--texto-secundario);
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn-destaque {
-    background-color: var(--cor-primaria);
+    background-color: var(--cor-destaque);
     color: white;
-    padding: 15px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
+    padding: 18px 40px;
+    font-size: 17px;
+    font-weight: 700;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(229, 9, 20, 0.4);
 }
 
-/* ---- CATÁLOGO / GRADE DE FILMES ---- */
+.btn-destaque:hover {
+    background-color: #b20710;
+    transform: scale(1.03); /* Efeito de pulso sutil */
+}
+
+/* ---- CATÁLOGO CLEAN ---- */
 .catalogo {
-    padding: 40px;
+    padding: 60px 5%;
 }
 
 .catalogo h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
 }
 
-/* Cria as colunas de filmes de forma automática e responsiva */
+/* Grade responsiva moderna */
 .grade-filmes {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
 }
 
-/* Cartão do filme */
+/* Cartão do filme com acabamento premium */
 .filme {
-    background-color: #333333;
-    height: 300px;
-    border-radius: 8px;
+    background-color: var(--fundo-cartao);
+    height: 320px;
+    border-radius: 12px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    font-weight: bold;
+    justify-content: flex-end; /* Conteúdo no rodapé do cartão */
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Borda quase invisível */
+    box-shadow: var(--sombra-suave);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Animação mais natural */
+    position: relative;
+    overflow: hidden; /* Corta o brilho extra */
 }
 
-/* Efeito de crescer levemente ao passar o rato (hover) */
+/* Pseudo-elemento para brilho extra no hover */
+.filme::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(180deg, rgba(229,9,20,0) 50%, rgba(229,9,20,0.15) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Efeito de hover profissional */
 .filme:hover {
-    transform: scale(1.05);
-    background-color: #444444;
+    transform: translateY(-8px) scale(1.02); /* Flutua e cresce suavemente */
+    border-color: rgba(229, 9, 20, 0.3);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+}
+
+.filme:hover::after {
+    opacity: 1;
 }

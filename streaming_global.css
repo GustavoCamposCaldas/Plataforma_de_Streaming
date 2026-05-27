@@ -1,43 +1,52 @@
-/* Variáveis de cores para facilitar o ajuste do tema */
+/* ---- VARIÁVEIS DE DESIGN MODERNO ---- */
 :root {
-    --cor-fundo: #141414; /* Preto cinzento estilo Netflix */
-    --cor-texto: #ffffff;
-    --cor-primaria: #e50914; /* Vermelho principal */
+    --fundo-profundo: #0a0a0a; /* Preto quase puro */
+    --fundo-cartao: #1a1a1a;   /* Cinza muito escuro para contraste */
+    --texto-principal: #ffffff;
+    --texto-secundario: #a0a0a0; /* Cinza claro para descrições */
+    --cor-destaque: #e50914;     /* Vermelho Netflix vibrante */
+    --sombra-suave: 0 4px 30px rgba(0, 0, 0, 0.5); /* Sombra difusa */
+    
+    /* Vidro: fundo levemente transparente e desfocado */
+    --efeito-vidro: blur(10px) saturate(180%);
+    --fundo-vidro: rgba(26, 26, 26, 0.75);
 }
 
-/* Reset básico para limpar as margens do navegador */
+/* ---- CONFIGURAÇÃO GERAL MODERNA ---- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Usando Montserrat/Roboto (fontes padrão do sistema) para visual profissional */
+    font-family: 'Montserrat', 'Roboto', 'Segoe UI', Tahoma, sans-serif;
 }
 
 body {
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
+    background-color: var(--fundo-profundo);
+    color: var(--texto-principal);
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Garante que o rodapé fica sempre abaixo */
+    min-height: 100vh;
 }
 
-/* Links em geral */
+/* Links modernos e limpos */
 a {
     text-decoration: none;
-    color: var(--cor-texto);
-    transition: 0.2s;
+    color: var(--texto-principal);
+    transition: all 0.3s ease; /* Transições suaves em tudo */
 }
 
 a:hover {
-    color: var(--cor-primaria);
+    color: var(--cor-destaque);
 }
 
-/* Rodapé comum a todas as páginas */
+/* ---- RODAPÉ MAIS CLEAN ---- */
 footer {
     margin-top: auto; 
     text-align: center;
-    padding: 20px;
-    background-color: #000000;
+    padding: 30px;
+    background-color: #000;
     font-size: 14px;
-    color: #888888;
+    color: var(--texto-secundario);
+    border-top: 1px solid #222;
 }
