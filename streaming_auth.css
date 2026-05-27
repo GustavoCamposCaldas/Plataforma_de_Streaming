@@ -1,4 +1,13 @@
-/* ---- CAIXA DE LOGIN ---- */
+/* ---- ESTRUTURA PARA CENTRALIZAR ---- */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 120px 20px 40px; /* Espaço no topo para não ficar atrás do menu */
+}
+
+/* ---- CAIXA DE AUTENTICAÇÃO ---- */
 .login-box {
     background-color: rgba(0, 0, 0, 0.75);
     padding: 50px;
@@ -11,6 +20,7 @@
 .login-box h2 {
     font-size: 30px;
     margin-bottom: 25px;
+    font-weight: 700;
 }
 
 .input-grupo {
@@ -20,7 +30,7 @@
 .input-grupo label {
     display: block;
     margin-bottom: 8px;
-    color: #aaaaaaaa;
+    color: #aaaaaa;
     font-size: 14px;
 }
 
@@ -32,17 +42,17 @@
     border-radius: 4px;
     color: white;
     font-size: 16px;
+    transition: 0.3s;
 }
 
-/* Destaca a caixinha com uma borda vermelha ao clicar nela */
 .input-grupo input:focus {
     background-color: #444444;
-    outline: 2px solid var(--cor-primaria);
+    outline: 2px solid var(--cor-destaque);
 }
 
 .btn-submit {
     width: 100%;
-    background-color: var(--cor-primaria);
+    background-color: var(--cor-destaque);
     color: white;
     border: none;
     padding: 14px;

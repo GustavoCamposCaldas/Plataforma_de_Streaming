@@ -1,67 +1,33 @@
-/* ---- NAV BAR FLUTUANTE ---- */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%; /* Padding em porcentagem para responsividade */
-    background-color: var(--fundo-vidro);
-    backdrop-filter: var(--efeito-vidro); /* Efeito de vidro desfocado */
-    -webkit-backdrop-filter: var(--efeito-vidro);
-    position: fixed; /* Fixa o menu no topo */
-    top: 0;
-    width: 100%;
-    z-index: 1000; /* Garante que fica por cima de tudo */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: var(--sombra-suave);
-}
-
-.logo {
-    color: var(--cor-destaque);
-    font-size: 30px;
-    font-weight: 800; /* Super negrito */
-    letter-spacing: -1px; /* Letras mais próximas */
-}
-
-.navbar nav {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-
-/* Link normal da nav */
-.navbar nav a:not(.btn-login) {
-    font-size: 15px;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: var(--texto-secundario);
-}
-
-/* Botão de login na nav */
-.btn-login {
-    background-color: var(--cor-destaque);
-    padding: 10px 22px;
-    border-radius: 50px; /* Bordas totalmente arredondadas */
-    font-weight: 700;
-    font-size: 14px;
-    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.3);
-}
-
-.btn-login:hover {
-    background-color: #b20710;
-    transform: translateY(-2px); /* Flutua levemente ao passar o mouse */
-}
-
-/* ---- BANNER IMERSIVO ---- */
+/* ---- BANNER IMERSIVO COM MARCA D'ÁGUA ---- */
 .banner {
-    height: 75vh; /* Mais alto */
+    height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* Gradiente moderno que escurece em direção ao conteúdo */
-    background: linear-gradient(180deg, rgba(10,10,10,0.1) 0%, rgba(10,10,10,1) 100%), url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover;
+    /* Imagem de fundo nova, neutra e sem logos */
+    background: linear-gradient(180deg, rgba(10,10,10,0.1) 0%, rgba(10,10,10,1) 100%), url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover;
     padding: 0 10% 20px;
-    margin-top: 80px; /* Compensa a nav fixa */
+    margin-top: 60px; 
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-marca-dagua {
+    position: absolute;
+    font-size: 14vw;
+    font-weight: 900;
+    color: rgba(229, 9, 20, 0.15);
+    z-index: 0;
+    user-select: none;
+    letter-spacing: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.banner-conteudo {
+    z-index: 1;
+    position: relative;
 }
 
 .banner-conteudo h2 {
@@ -93,10 +59,10 @@
 
 .btn-destaque:hover {
     background-color: #b20710;
-    transform: scale(1.03); /* Efeito de pulso sutil */
+    transform: scale(1.03);
 }
 
-/* ---- CATÁLOGO CLEAN ---- */
+/* ---- CATÁLOGO E FILMES ---- */
 .catalogo {
     padding: 60px 5%;
 }
@@ -108,14 +74,12 @@
     letter-spacing: -1px;
 }
 
-/* Grade responsiva moderna */
 .grade-filmes {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 25px;
 }
 
-/* Cartão do filme com acabamento premium */
 .filme {
     background-color: var(--fundo-cartao);
     height: 320px;
@@ -123,19 +87,26 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end; /* Conteúdo no rodapé do cartão */
+    justify-content: flex-end;
     padding: 20px;
-    font-size: 16px;
-    font-weight: 600;
     cursor: pointer;
-    border: 1px solid rgba(255, 255, 255, 0.05); /* Borda quase invisível */
     box-shadow: var(--sombra-suave);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Animação mais natural */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative;
-    overflow: hidden; /* Corta o brilho extra */
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
 }
 
-/* Pseudo-elemento para brilho extra no hover */
+.filme::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0) 100%);
+    border-radius: 12px;
+    z-index: 1;
+}
+
 .filme::after {
     content: '';
     position: absolute;
@@ -143,12 +114,21 @@
     background: linear-gradient(180deg, rgba(229,9,20,0) 50%, rgba(229,9,20,0.15) 100%);
     opacity: 0;
     transition: opacity 0.4s ease;
+    z-index: 2;
 }
 
-/* Efeito de hover profissional */
+.filme-titulo {
+    z-index: 3;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000;
+    text-align: center;
+    width: 100%;
+}
+
 .filme:hover {
-    transform: translateY(-8px) scale(1.02); /* Flutua e cresce suavemente */
-    border-color: rgba(229, 9, 20, 0.3);
+    transform: translateY(-8px) scale(1.02);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
 }
 

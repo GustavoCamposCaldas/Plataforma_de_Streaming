@@ -1,23 +1,19 @@
 /* ---- VARIÁVEIS DE DESIGN MODERNO ---- */
 :root {
-    --fundo-profundo: #0a0a0a; /* Preto quase puro */
-    --fundo-cartao: #1a1a1a;   /* Cinza muito escuro para contraste */
+    --fundo-profundo: #0a0a0a;
+    --fundo-cartao: #1a1a1a;
     --texto-principal: #ffffff;
-    --texto-secundario: #a0a0a0; /* Cinza claro para descrições */
-    --cor-destaque: #e50914;     /* Vermelho Netflix vibrante */
-    --sombra-suave: 0 4px 30px rgba(0, 0, 0, 0.5); /* Sombra difusa */
-    
-    /* Vidro: fundo levemente transparente e desfocado */
+    --texto-secundario: #a0a0a0;
+    --cor-destaque: #e50914;
+    --sombra-suave: 0 4px 30px rgba(0, 0, 0, 0.5);
     --efeito-vidro: blur(10px) saturate(180%);
     --fundo-vidro: rgba(26, 26, 26, 0.75);
 }
 
-/* ---- CONFIGURAÇÃO GERAL MODERNA ---- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Usando Montserrat/Roboto (fontes padrão do sistema) para visual profissional */
     font-family: 'Montserrat', 'Roboto', 'Segoe UI', Tahoma, sans-serif;
 }
 
@@ -29,18 +25,68 @@ body {
     min-height: 100vh;
 }
 
-/* Links modernos e limpos */
 a {
     text-decoration: none;
     color: var(--texto-principal);
-    transition: all 0.3s ease; /* Transições suaves em tudo */
+    transition: all 0.3s ease;
 }
 
 a:hover {
     color: var(--cor-destaque);
 }
 
-/* ---- RODAPÉ MAIS CLEAN ---- */
+/* ---- NAV BAR FLUTUANTE (AGORA GLOBAL) ---- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--fundo-vidro);
+    backdrop-filter: var(--efeito-vidro);
+    -webkit-backdrop-filter: var(--efeito-vidro);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--sombra-suave);
+}
+
+.logo {
+    color: var(--cor-destaque);
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.navbar nav a:not(.btn-login) {
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--texto-secundario);
+}
+
+.btn-login {
+    background-color: var(--cor-destaque);
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.3);
+}
+
+.btn-login:hover {
+    background-color: #b20710;
+    transform: translateY(-2px);
+}
+
+/* ---- RODAPÉ ---- */
 footer {
     margin-top: auto; 
     text-align: center;

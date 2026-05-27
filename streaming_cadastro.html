@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevFlix - Entrar</title>
+    <title>DevFlix - Cadastrar</title>
     <link rel="stylesheet" href="streaming_global.css">
     <link rel="stylesheet" href="streaming_auth.css">
 </head>
@@ -20,20 +20,24 @@
 
     <main class="auth-container">
         <div class="login-box">
-            <h2>Entrar</h2>
-            <form onsubmit="fazerLogin(event)">
+            <h2>Criar Conta</h2>
+            <form onsubmit="realizarCadastro(event)">
                 <div class="input-grupo">
-                    <label>Email ou Usuário</label>
+                    <label>Nome Completo</label>
+                    <input type="text" required>
+                </div>
+                <div class="input-grupo">
+                    <label>Email</label>
                     <input type="email" required>
                 </div>
                 <div class="input-grupo">
                     <label>Senha</label>
                     <input type="password" required>
                 </div>
-                <button type="submit" class="btn-submit">Entrar</button>
+                <button type="submit" class="btn-submit">Finalizar Cadastro</button>
             </form>
             <p style="margin-top: 20px; text-align: center; font-size: 14px; color: #aaa;">
-                Novo por aqui? <a href="streaming_cadastro.html" style="color: var(--cor-destaque);">Cadastre-se agora</a>
+                Já tem conta? <a href="streaming_login.html" style="color: var(--cor-destaque);">Entre aqui</a>
             </p>
         </div>
     </main>
@@ -43,10 +47,10 @@
     </footer>
 
     <script>
-        function fazerLogin(event) {
+        function realizarCadastro(event) {
             event.preventDefault(); 
-            alert("Bem-vindo de volta! Login efetuado com sucesso.");
-            window.location.href = "streaming_index.html"; 
+            alert("🎉 Cadastro realizado com sucesso!\n\nAgora você já pode fazer login.");
+            window.location.href = "streaming_login.html"; 
         }
     </script>
 </body>
