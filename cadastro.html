@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevFlix - Cadastrar</title>
+    
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <h1 class="logo">DevFlix</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="planos.html">Planos</a>
+            <div class="nav-user">
+                <a href="perfil.html" class="user-profile-link">
+                    <div class="user-avatar user-avatar-display">U</div>
+                    <span class="user-name-display">Meu Perfil</span>
+                </a>
+                <a href="index.html" class="btn-sair">Sair</a>
+            </div>
+            <div class="nav-auth">
+                <a href="cadastro.html">Cadastrar</a>
+                <a href="login.html" class="btn-login">Entrar</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="auth-container">
+        <div class="login-box">
+            <h2>Criar Conta</h2>
+            <form>
+                <div class="input-grupo">
+                    <label>Nome Completo</label>
+                    <input type="text" required>
+                </div>
+                <div class="input-grupo">
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="input-grupo">
+                    <label>Senha</label>
+                    <input type="password" required>
+                </div>
+                <a href="#sucesso" class="btn-submit" style="display: block; text-align: center;">Finalizar Cadastro</a>
+            </form>
+            <p style="margin-top: 20px; text-align: center; font-size: 14px; color: #aaa;">
+                Já tem conta? <a href="login.html" style="color: var(--cor-destaque);">Entre aqui</a>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Projeto Escolar - Plataforma de Streaming &copy; 2026</p>
+    </footer>
+
+    <div id="sucesso" class="modal-sucesso">
+        <div class="modal-sucesso-card">
+            <h2>🎉 Sucesso!</h2>
+            <p>Seu cadastro foi realizado com êxito.</p>
+            <a href="#logado" class="btn-fechar">Acessar Plataforma</a>
+        </div>
+    </div>
+
+    <div id="logado" style="display: none;"></div>
+</body>
+</html>

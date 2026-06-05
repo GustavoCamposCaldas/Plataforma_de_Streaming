@@ -4,24 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevFlix - Entrar</title>
-    <link rel="stylesheet" href="streaming_global.css">
-    <link rel="stylesheet" href="streaming_auth.css">
+    
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="navbar">
         <h1 class="logo">DevFlix</h1>
         <nav>
-            <a href="streaming_index.html">Início</a>
-            <a href="streaming_planos.html">Planos</a>
-            <a href="streaming_cadastro.html">Cadastrar</a>
-            <a href="streaming_login.html" class="btn-login">Entrar</a>
+            <a href="index.html">Início</a>
+            <a href="planos.html">Planos</a>
+            <div class="nav-user">
+                <a href="perfil.html" class="user-profile-link">
+                    <div class="user-avatar user-avatar-display">U</div>
+                    <span class="user-name-display">Meu Perfil</span>
+                </a>
+                <a href="index.html" class="btn-sair">Sair</a>
+            </div>
+            <div class="nav-auth">
+                <a href="cadastro.html">Cadastrar</a>
+                <a href="login.html" class="btn-login">Entrar</a>
+            </div>
         </nav>
     </header>
 
     <main class="auth-container">
         <div class="login-box">
             <h2>Entrar</h2>
-            <form onsubmit="fazerLogin(event)">
+            <form action="index.html#login-sucesso">
                 <div class="input-grupo">
                     <label>Email ou Usuário</label>
                     <input type="email" required>
@@ -33,7 +43,7 @@
                 <button type="submit" class="btn-submit">Entrar</button>
             </form>
             <p style="margin-top: 20px; text-align: center; font-size: 14px; color: #aaa;">
-                Novo por aqui? <a href="streaming_cadastro.html" style="color: var(--cor-destaque);">Cadastre-se agora</a>
+                Novo por aqui? <a href="cadastro.html" style="color: var(--cor-destaque);">Cadastre-se agora</a>
             </p>
         </div>
     </main>
@@ -42,12 +52,6 @@
         <p>Projeto Escolar - Plataforma de Streaming &copy; 2026</p>
     </footer>
 
-    <script>
-        function fazerLogin(event) {
-            event.preventDefault(); 
-            alert("Bem-vindo de volta! Login efetuado com sucesso.");
-            window.location.href = "streaming_index.html"; 
-        }
-    </script>
+    
 </body>
 </html>

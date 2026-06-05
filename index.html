@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevFlix - Início</title>
+    
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <h1 class="logo">DevFlix</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="planos.html">Planos</a>
+            <div class="nav-user">
+                <a href="perfil.html" class="user-profile-link">
+                    <div class="user-avatar user-avatar-display">U</div>
+                    <span class="user-name-display">Meu Perfil</span>
+                </a>
+                <a href="index.html" class="btn-sair">Sair</a>
+            </div>
+            <div class="nav-auth">
+                <a href="cadastro.html">Cadastrar</a>
+                <a href="login.html" class="btn-login">Entrar</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner">
+            <div class="banner-marca-dagua">DEVFLIX</div>
+            <div class="banner-conteudo">
+                <p>Acompanhe as aventuras do Homem-Aranha, Coringa e toda a saga de Velozes e Furiosos em um só lugar.</p>
+                <a href="planos.html" class="btn-destaque">Assinar Agora</a>
+            </div>
+        </section>
+
+        <section class="catalogo">
+    <h3>Em Alta</h3>
+    <div class="grade-filmes">
+        <div class="filme homem-aranha" title="Homem-Aranha">
+            <span class="filme-titulo">Homem-Aranha</span>
+        </div>
+        
+        <div class="filme velozes-e-furiosos" title="Velozes e Furiosos">
+            <span class="filme-titulo">Velozes e Furiosos</span>
+        </div>
+        
+        <div class="filme coringa" title="Coringa">
+            <span class="filme-titulo">Coringa</span>
+        </div>
+        
+        <div class="filme superman" title="Superman">
+            <span class="filme-titulo">Superman</span>
+        </div>
+        
+        <div class="filme piratas-do-caribe" title="Piratas do Caribe">
+            <span class="filme-titulo">Piratas do Caribe</span>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <footer>
+        <p>Projeto Escolar - Plataforma de Streaming &copy; 2026</p>
+    </footer>
+
+    <div id="login-sucesso" class="modal-login-sucesso">
+        <div class="modal-login-sucesso-card">
+            <h2>✅ Login Efetuado!</h2>
+            <p>Bem-vindo de volta à DevFlix.</p>
+            <a href="#logado" class="btn-login btn-fechar-login">Continuar Assistindo</a>
+        </div>
+    </div>
+
+    <div id="logado" style="display: none;"></div>
+
+    <script>
+        window.addEventListener('load', () => {
+            const nomeSalvo = localStorage.getItem('devflix_nome');
+            if (nomeSalvo) {
+                document.querySelectorAll('.user-name-display').forEach(el => el.innerText = nomeSalvo);
+                const inicial = nomeSalvo.charAt(0).toUpperCase();
+                document.querySelectorAll('.user-avatar-display').forEach(el => el.innerText = inicial);
+            }
+        });
+    </script>
+</body>
+</html>
