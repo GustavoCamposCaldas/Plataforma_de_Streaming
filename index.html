@@ -76,16 +76,5 @@
     </div>
 
     <div id="logado" style="display: none;"></div>
-
-    <script>
-        window.addEventListener('load', () => {
-            const nomeSalvo = localStorage.getItem('devflix_nome');
-            if (nomeSalvo) {
-                document.querySelectorAll('.user-name-display').forEach(el => el.innerText = nomeSalvo);
-                const inicial = nomeSalvo.charAt(0).toUpperCase();
-                document.querySelectorAll('.user-avatar-display').forEach(el => el.innerText = inicial);
-            }
-        });
-    </script>
 </body>
 </html>

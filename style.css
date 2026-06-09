@@ -100,11 +100,12 @@ footer {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(180deg, rgba(10,10,10,0.1) 0%, rgba(10,10,10,1) 100%), url('img/banner.jpg') center/cover no-repeat;
+    background: linear-gradient(180deg, rgba(10,10,10,0.1) 0%, rgba(10,10,10,1) 100%), url('img/banner.png') center/cover no-repeat;
     padding: 0 10% 20px;
     margin-top: 60px; 
     position: relative;
     overflow: hidden;
+    animation: bannerFadeIn 1.5s ease-in-out;
 }
 
 .banner-marca-dagua {
@@ -251,6 +252,12 @@ footer {
     width: 100%;
     max-width: 400px;
     border: 1px solid #222222;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
 }
 
 .login-box h2 {
@@ -302,6 +309,25 @@ footer {
 
 .btn-submit:hover {
     background-color: #b20710;
+    transform: scale(1.03);
+}
+
+@keyframes bannerFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    50% { transform: translateX(6px); }
+    75% { transform: translateX(-6px); }
+}
+
+/* Dispara o tremor nos inputs inválidos quando o usuário tenta clicar no botão de enviar */
+form:has(.btn-submit:active) .input-grupo input:invalid {
+    animation: shake 0.2s ease-in-out;
+    outline: 2px solid var(--cor-destaque);
 }
 
 .modal-sucesso {
