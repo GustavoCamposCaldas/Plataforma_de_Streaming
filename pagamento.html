@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevFlix - Pagamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <h1 class="logo">DevFlix</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="planos.html">Planos</a>
+            <div class="nav-user">
+                <a href="perfil.html" class="user-profile-link">
+                    <div class="user-avatar user-avatar-display">U</div>
+                    <span class="user-name-display">Meu Perfil</span>
+                </a>
+                <a href="index.html" class="btn-sair">Sair</a>
+            </div>
+            <div class="nav-auth" style="display: none;">
+                <a href="cadastro.html">Cadastrar</a>
+                <a href="login.html" class="btn-login">Entrar</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="auth-container">
+        <div class="login-box">
+            <h2 style="text-align: center;">Finalizar Assinatura</h2>
+            <p style="text-align: center; color: var(--cor-destaque); font-weight: bold; margin-bottom: 20px;">Escolha o método de pagamento</p>
+
+            <!-- Sistema de Abas em CSS Puro -->
+            <div class="tabs-pagamento">
+                <input type="radio" name="metodo" id="tab-cartao" checked>
+                <input type="radio" name="metodo" id="tab-pix">
+
+                <div class="abas-labels">
+                    <label for="tab-cartao" class="label-cartao">Cartão de Crédito</label>
+                    <label for="tab-pix" class="label-pix">PIX</label>
+                </div>
+
+                <!-- Conteúdo Cartão -->
+                <div class="conteudo-cartao">
+                    <form action="#pagamento-sucesso">
+                        <div class="input-grupo">
+                            <label>Número do Cartão</label>
+                            <input type="text" placeholder="0000 0000 0000 0000" required>
+                        </div>
+                        <div style="display: flex; gap: 15px;">
+                            <div class="input-grupo" style="flex: 2;">
+                                <label>Validade</label>
+                                <input type="text" placeholder="MM/AA" required>
+                            </div>
+                            <div class="input-grupo" style="flex: 1;">
+                                <label>CVV</label>
+                                <input type="text" placeholder="123" required>
+                            </div>
+                        </div>
+                        <div class="input-grupo">
+                            <label>Nome no Cartão</label>
+                            <input type="text" placeholder="Nome como impresso" required>
+                        </div>
+                        <button type="submit" class="btn-submit">Confirmar Pagamento</button>
+                    </form>
+                </div>
+
+                <!-- Conteúdo PIX -->
+                <div class="conteudo-pix">
+                    <div style="text-align: center;">
+                        <div class="pix-qrcode">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=DevFlixPixPagamentoStatic" alt="QR Code PIX">
+                        </div>
+                        <p style="font-size: 14px; color: #aaa; margin-bottom: 15px;">Escaneie o QR Code acima</p>
+                        
+                        <div class="input-grupo" style="text-align: left;">
+                            <label>Código Copia e Cola</label>
+                            <input type="text" value="00020126330014BR.GOV.BCB.PIX0111DEVFLIX2026520400005303986" readonly 
+                                   style="background: #222; font-size: 11px; cursor: text;">
+                            <small style="color: #666; display: block; margin-top: 5px;">Selecione o texto acima para copiar</small>
+                        </div>
+
+                        <a href="#pagamento-sucesso" class="btn-submit" style="display: block; text-align: center; margin-top: 20px;">Confirmar Pagamento</a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="planos.html" style="display: block; text-align: center; margin-top: 20px; font-size: 14px; color: #aaa;">Alterar Plano</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Projeto Escolar - Plataforma de Streaming &copy; 2026</p>
+    </footer>
+
+    <!-- Modal de Sucesso de Pagamento -->
+    <div id="pagamento-sucesso" class="modal-sucesso">
+        <div class="modal-sucesso-card">
+            <h2>💳 Pagamento Confirmado!</h2>
+            <p>Sua assinatura foi ativada. Agora você tem acesso ilimitado ao DevFlix.</p>
+            <a href="index.html#logado" class="btn-fechar">Começar a Assistir</a>
+        </div>
+    </div>
+</body>
+</html>
