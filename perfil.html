@@ -48,7 +48,7 @@
                     <label>Senha Atual</label>
                     <input type="password" placeholder="Digite sua senha para confirmar">
                 </div>
-                <a href="#perfil-salvo" onclick="salvarPerfil()" class="btn-submit" style="display: block; text-align: center;">Salvar Alterações</a>
+                <a href="#perfil-salvo" class="btn-submit" style="display: block; text-align: center;">Salvar Alterações</a>
             </form>
             <a href="index.html#logado" style="display: block; text-align: center; margin-top: 25px; font-size: 14px; color: var(--texto-secundario);">Voltar para o catálogo</a>
         </div>
@@ -65,32 +65,5 @@
             <a href="#" class="btn-login btn-fechar-perfil">Continuar Editando</a>
         </div>
     </div>
-
-    <script>
-        window.addEventListener('load', () => {
-            const nomeSalvo = localStorage.getItem('devflix_nome');
-            const emailSalvo = localStorage.getItem('devflix_email');
-
-            if (nomeSalvo) {
-                document.getElementById('input-nome').value = nomeSalvo;
-                document.querySelectorAll('.user-name-display').forEach(el => el.innerText = nomeSalvo);
-                document.querySelectorAll('.user-avatar-display').forEach(el => el.innerText = nomeSalvo.charAt(0).toUpperCase());
-            }
-            if (emailSalvo) {
-                document.getElementById('input-email').value = emailSalvo;
-            }
-        });
-
-        function salvarPerfil() {
-            const novoNome = document.getElementById('input-nome').value;
-            const novoEmail = document.getElementById('input-email').value;
-
-            localStorage.setItem('devflix_nome', novoNome);
-            localStorage.setItem('devflix_email', novoEmail);
-
-            document.querySelectorAll('.user-name-display').forEach(el => el.innerText = novoNome);
-            document.querySelectorAll('.user-avatar-display').forEach(el => el.innerText = novoNome.charAt(0).toUpperCase());
-        }
-    </script>
 </body>
 </html>

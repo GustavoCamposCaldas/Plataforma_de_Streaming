@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevFlix - Planos</title>
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,38 +19,32 @@
                 </a>
                 <a href="index.html" class="btn-sair">Sair</a>
             </div>
-            <div class="nav-auth">
-                <a href="cadastro.html">Cadastrar</a>
-                <a href="login.html" class="btn-login">Entrar</a>
-            </div>
         </nav>
     </header>
 
     <main>
-        <div class="planos-container">
-            <div class="card-plano">
+        <div class="planos-container" style="display: flex; gap: 20px; justify-content: center; padding: 50px;">
+            <div class="card-plano" style="border: 1px solid #333; padding: 20px; border-radius: 8px; width: 300px; text-align: center;">
                 <h3>Plano Padrão</h3>
-                <p class="preco">R$ 21,90</p>
+                <p class="preco" style="font-size: 24px; font-weight: bold;">R$ 21,90</p>
                 <p style="color: #aaa; margin-bottom: 10px;">2 Telas simultâneas</p>
                 <p style="color: #aaa; margin-bottom: 10px;">Com Anúncios</p>
-                <p style="color: #aaa;">Resolução 1080p Full HD</p>
-                <a href="pagamento.html?plano=Padrao" class="btn-assinar">Escolher Padrão</a>
+                <p style="color: #aaa; margin-bottom: 20px;">Resolução 1080p Full HD</p>
+                <a href="pagamento.html?plano=Padrao" class="btn-assinar" style="display: block; padding: 10px; background: var(--cor-destaque); color: white; text-decoration: none;">Escolher Padrão</a>
             </div>
-            <div class="card-plano">
+            <div class="card-plano" style="border: 1px solid #333; padding: 20px; border-radius: 8px; width: 300px; text-align: center;">
                 <h3>Plano Premium</h3>
-                <p class="preco">R$ 45,90</p>
+                <p class="preco" style="font-size: 24px; font-weight: bold;">R$ 45,90</p>
                 <p style="color: #aaa; margin-bottom: 10px;">4 Telas simultâneas</p>
                 <p style="color: #aaa; margin-bottom: 10px;">Sem Anúncios</p>
-                <p style="color: #aaa;">Resolução 4K + HDR</p>
-                <a href="pagamento.html?plano=Premium" class="btn-assinar">Escolher Premium</a>
+                <p style="color: #aaa; margin-bottom: 20px;">Resolução 4K + HDR</p>
+                <a href="pagamento.html?plano=Premium" class="btn-assinar" style="display: block; padding: 10px; background: var(--cor-destaque); color: white; text-decoration: none;">Escolher Premium</a>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>Projeto Escolar - Plataforma de Streaming &copy; 2026</p>
+        <p style="text-align: center; color: #666;">Projeto Escolar - Plataforma de Streaming &copy; 2026</p>
     </footer>
-
-    
 </body>
 </html>
